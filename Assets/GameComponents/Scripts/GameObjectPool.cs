@@ -12,7 +12,7 @@ public class GameObjectPool : MonoBehaviour
 
     private List<GameObject> _createdGameObjects;
 
-    protected void Initialize(GameObject prefab)
+    private protected void Initialize(GameObject prefab)
     {
         _createdGameObjects = new List<GameObject>(_gameObjectsCount);
 
@@ -26,7 +26,7 @@ public class GameObjectPool : MonoBehaviour
         }
     }
 
-    protected bool TryGetObject(out GameObject firstCreatedGameObject)
+    private protected bool TryGetObject(out GameObject firstCreatedGameObject)
     {
         firstCreatedGameObject = _createdGameObjects.FirstOrDefault(obj => obj.activeSelf == false);
 
