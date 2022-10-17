@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameObjectsContainer: {fileID: 1277463091}
-  _gameObjectsCount: 3
+  _gameObjectsCount: 15
   _enemyPrefab: {fileID: 3432063557185300356, guid: 81a365e23e6bca54d9f6896fe589e1ea, type: 3}
   _secondsBetweenSpawn: 1
   _spawnPoints:
