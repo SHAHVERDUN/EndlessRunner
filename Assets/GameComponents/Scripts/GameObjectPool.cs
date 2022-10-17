@@ -26,7 +26,7 @@ public class GameObjectPool : MonoBehaviour
         }
     }
 
-    private protected bool TryGetObject(out GameObject firstCreatedGameObject)
+    private protected bool TryGetGameObject(out GameObject firstCreatedGameObject)
     {
         firstCreatedGameObject = _createdGameObjects.FirstOrDefault(obj => obj.activeSelf == false);
 

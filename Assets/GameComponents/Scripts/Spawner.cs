@@ -41,7 +41,7 @@ public class Spawner : GameObjectPool
 
     private void SpawnFromPrefab(bool isSpawn)
     {
-        if (isSpawn == true && TryGetObject(out GameObject enemy))
+        if (isSpawn == true && TryGetGameObject(out GameObject enemy))
         {
             int randomSpawnPointNumber = Random.Range(0, _spawnPoints.Length);
 
