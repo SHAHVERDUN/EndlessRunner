@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaaa12759f28b941a68e1ce79dd73e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityModifier: 9
+  _velocityModifier: 13
   _stepSizeVertical: 3
   _minVerticalHeight: -3
   _maxVerticalHeight: 3
