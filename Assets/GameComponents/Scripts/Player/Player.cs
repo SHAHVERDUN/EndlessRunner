@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public event UnityAction<float> HealthChanged;
+
+    public event UnityAction Died;
+
     [SerializeField]
     private float _maxHealthCount;
 
@@ -10,6 +15,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentHealthCount = _maxHealthCount;
+
+        HealthChanged?.Invoke(ReturnNormalizedCountOfHealth());
     }
 
     private void Update()
@@ -19,7 +26,7 @@ public class Player : MonoBehaviour
 
     private void CheckHealthStatus()
     {
-        if (_currentHealthCount < 0)
+        if (_currentHealthCount <= 0)
         {
             _currentHealthCount = 0;
 
@@ -31,13 +38,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private float ReturnNormalizedCountOfHealth()
+    {
+        float normalizedHealthCount = _currentHealthCount / _maxHealthCount;
+
+        return normalizedHealthCount;
+    }
+
     public void ApplyDamage(float damage)
     {
         _currentHealthCount -= damage;
+
+        HealthChanged?.Invoke(ReturnNormalizedCountOfHealth());
     }
 
     public void Die()
     {
-        Debug.Log("Сдох");
+        Died?.Invoke();
     }
 }
