@@ -3,7 +3,7 @@ using UnityEngine;
 public class Spawner : GameObjectPool
 {
     [SerializeField]
-    private GameObject _enemyPrefab;
+    private GameObject[] _enemyPrefabs;
 
     [SerializeField]
     private float _secondsBetweenSpawn;
@@ -15,7 +15,7 @@ public class Spawner : GameObjectPool
 
     private void Start()
     {
-        Initialize(_enemyPrefab);
+        Initialize(_enemyPrefabs);
     }
 
     private void Update()

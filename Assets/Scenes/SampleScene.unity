@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaaa12759f28b941a68e1ce79dd73e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityModifier: 7
+  _velocityModifier: 9
   _stepSizeVertical: 3
   _minVerticalHeight: -3
   _maxVerticalHeight: 3
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b2bec74b9ecbe4e8f3a27352cb06b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealthCount: 10
+  _maxHealthCount: 100
 --- !u!212 &286683993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1253,7 +1253,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObjectsContainer: {fileID: 1277463091}
   _gameObjectsCount: 15
-  _enemyPrefab: {fileID: 3432063557185300356, guid: 81a365e23e6bca54d9f6896fe589e1ea, type: 3}
+  _enemyPrefabs:
+  - {fileID: 3432063557185300356, guid: 81a365e23e6bca54d9f6896fe589e1ea, type: 3}
+  - {fileID: 260454888680492984, guid: 9c36b74d305e1024fad90028ae65e0f8, type: 3}
   _secondsBetweenSpawn: 1
   _spawnPoints:
   - {fileID: 1206071282}
@@ -1482,7 +1484,7 @@ MonoBehaviour:
   _player: {fileID: 286683992}
   _slider: {fileID: 1468346799}
   _sliderFillRectangle: {fileID: 1653837131}
-  _smoothingChangingValue: 0.25
+  _smoothingChangingValue: 0.05
   _gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -1509,7 +1511,7 @@ MonoBehaviour:
     atime5: 0
     atime6: 0
     atime7: 0
-    m_Mode: 0
+    m_Mode: 1
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
 --- !u!114 &1468346799

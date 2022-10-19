@@ -26,6 +26,22 @@ public class GameObjectPool : MonoBehaviour
         }
     }
 
+    private protected void Initialize(GameObject[] prefabs)
+    {
+        _createdGameObjects = new List<GameObject>(_gameObjectsCount);
+
+        for (int i = 0; i < _gameObjectsCount; i++)
+        {
+            int randomPrefabNumber = Random.Range(0, prefabs.Length);
+
+            GameObject createdGameObject = Instantiate(prefabs[randomPrefabNumber], _gameObjectsContainer.transform);
+
+            createdGameObject.SetActive(false);
+
+            _createdGameObjects.Add(createdGameObject);
+        }
+    }
+
     private protected bool TryGetGameObject(out GameObject firstCreatedGameObject)
     {
         firstCreatedGameObject = _createdGameObjects.FirstOrDefault(obj => obj.activeSelf == false);
